@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CVIS Laboratory | BRAC University Center for Computer Vision &amp; Intelligent Systems</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"academic-navy": "#172B4D", "institutional-blue": "#123F78", primary: "#005cb8", "primary-container": "#1275e2", secondary: "#465f88", "accent-gold": "#F2C94C", "surface-white": "#FFFFFF", "surface-soft": "#F5F8FC", "surface-container": "#ebedf7", "subtle-border": "#D9E3EE", "primary-text": "#243449", "on-surface-variant": "#414753", "muted-text": "#64748B", "surface-dim": "#d7dae3", "tertiary-fixed-dim": "#ffb68c", "outline-variant": "#c1c6d5", "surface-container-highest": "#e0e2eb", "error-container": "#ffdad6", "inverse-primary": "#aac7ff", tertiary: "#9a4600", "on-primary-fixed-variant": "#00458d", "surface-container-low": "#f1f3fc", "tertiary-fixed": "#ffdbc9", "tertiary-container": "#c05900", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "surface-tint": "#005db8", "surface-container-high": "#e6e8f1", "primary-fixed-dim": "#aac7ff", "surface-bright": "#f9f9ff", "on-background": "#181c22", "inverse-surface": "#2d3037", "on-error": "#ffffff", "on-secondary-container": "#3f5881", background: "#f9f9ff", "on-primary-fixed": "#001b3e", surface: "#f9f9ff", "surface-variant": "#e0e2eb", "primary-fixed": "#d6e3ff", "secondary-container": "#b6d0ff", "on-secondary-fixed": "#001b3d", "secondary-fixed-dim": "#aec7f7", "on-primary": "#ffffff", "on-primary-container": "#000512", "on-tertiary-container": "#0d0300", "on-surface": "#181c22", "secondary-fixed": "#d6e3ff", "on-secondary-fixed-variant": "#2d476f", "on-secondary": "#ffffff", outline: "#717785", "on-error-container": "#93000a", "on-tertiary-fixed": "#321200", "on-tertiary-fixed-variant": "#763400", "inverse-on-surface": "#eef0fa", error: "#ba1a1a"}, fontFamily: {sans: ["Inter", "sans-serif"], headline: ["Inter"], mono: ["JetBrains Mono", "monospace"], "label-lg": ["Inter"], "headline-md": ["Inter"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"label-lg": ["14px", {lineHeight: "20px", fontWeight: "500"}], "headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "label-sm": ["11px", {lineHeight: "14px", fontWeight: "500"}], "label-md": ["12px", {lineHeight: "16px", fontWeight: "500"}], "headline-lg": ["32px", {lineHeight: "40px", fontWeight: "600"}], "body-sm": ["12px", {lineHeight: "16px", fontWeight: "400"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "500"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}]}, spacing: {"space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", gutter: "1.5rem", "space-lg": "1.5rem", margin: "2rem"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+    @layer base {
+      html { font-family: 'Inter', sans-serif; color: #243449; background-color: #F5F8FC; }
+    }
+    .custom-scroll::-webkit-scrollbar { width: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: #EDF2F7; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+  </style>
+</head>
+<body class="bg-surface-soft text-primary-text font-sans antialiased selection:bg-institutional-blue selection:text-white">
+<!-- TOP INSTITUTIONAL BAR -->
+<div class="w-full bg-academic-navy text-white text-xs border-b border-white/10 px-4 sm:px-8 py-2 flex justify-between items-center z-50 relative">
+<div class="flex items-center gap-3">
+<span class="font-semibold tracking-wide text-white uppercase text-[11px]">BRAC University</span>
+<span class="text-white/40">|</span>
+<span class="text-white/80 hidden sm:inline text-[11px]">Department of Computer Science &amp; Engineering</span>
+<span class="text-white/40 hidden sm:inline">|</span>
+<span class="text-accent-gold font-medium text-[11px] hidden md:inline">Research Excellence &amp; Academic Innovation</span>
+</div>
+<div class="flex items-center gap-4 text-[11px]">
+<span class="text-white/70 hidden sm:flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span> Academic Session 2024–2025
+      </span>
+<a class="text-white/90 hover:text-accent-gold transition-colors underline decoration-white/30" href="mailto:cvis@bracu.ac.bd">cvis@bracu.ac.bd</a>
+</div>
+</div>
+<!-- MAIN NAVIGATION -->
+<header class="sticky top-0 left-0 w-full z-40 bg-surface-white/95 backdrop-blur-md border-b border-subtle-border shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Laboratory Brand -->
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-10 h-10 rounded bg-institutional-blue text-white flex items-center justify-center font-headline font-bold text-lg shadow-sm">
+          C
+        </div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-lg text-academic-navy tracking-tight leading-none group-hover:text-institutional-blue transition-colors">
+            CVIS Laboratory
+          </span>
+<span class="text-[11px] text-muted-text font-medium tracking-normal mt-0.5">
+            Center for Computer Vision &amp; Intelligent Systems
+          </span>
+</div>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-primary-text">
+<a class="hover:text-institutional-blue transition-colors" href="#about">About</a>
+<a class="hover:text-institutional-blue transition-colors" href="#research">Research Areas</a>
+<a class="hover:text-institutional-blue transition-colors" href="#publications">Publications</a>
+<a class="hover:text-institutional-blue transition-colors" href="#people">Investigators</a>
+<a class="hover:text-institutional-blue transition-colors" href="#facilities">Facilities &amp; Rigs</a>
+<a class="hover:text-institutional-blue transition-colors" href="#seminars">Seminars</a>
+</nav>
+<!-- Action Buttons -->
+<div class="hidden sm:flex items-center gap-3">
+<button class="px-4 py-2 border border-institutional-blue text-institutional-blue font-medium text-xs sm:text-sm rounded hover:bg-institutional-blue/5 transition-all" onclick="openContactModal('inquiry')">
+          Contact Lab
+        </button>
+<button class="px-4 py-2 bg-accent-gold text-academic-navy font-semibold text-xs sm:text-sm rounded shadow-sm hover:brightness-95 transition-all" onclick="openContactModal('assistantship')">
+          Join Laboratory
+        </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Toggle Navigation Menu" class="lg:hidden p-2 text-primary-text hover:text-institutional-blue rounded border border-subtle-border" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Mobile Nav Drawer -->
+<div class="hidden lg:hidden border-b border-subtle-border bg-surface-white px-4 pt-3 pb-5 space-y-3" id="mobileMenu">
+<a class="block py-2 text-sm font-medium text-primary-text hover:text-institutional-blue" href="#about" onclick="toggleMobileMenu()">About CVIS</a>
+<a class="block py-2 text-sm font-medium text-primary-text hover:text-institutional-blue" href="#research" onclick="toggleMobileMenu()">Core Research Areas</a>
+<a class="block py-2 text-sm font-medium text-primary-text hover:text-institutional-blue" href="#publications" onclick="toggleMobileMenu()">Selected Publications</a>
+<a class="block py-2 text-sm font-medium text-primary-text hover:text-institutional-blue" href="#people" onclick="toggleMobileMenu()">Faculty &amp; Scholars</a>
+<a class="block py-2 text-sm font-medium text-primary-text hover:text-institutional-blue" href="#facilities" onclick="toggleMobileMenu()">Instrumentation &amp; Rigs</a>
+<a class="block py-2 text-sm font-medium text-primary-text hover:text-institutional-blue" href="#seminars" onclick="toggleMobileMenu()">Seminars &amp; Colloquia</a>
+<div class="pt-2 flex flex-col gap-2">
+<button class="w-full py-2.5 bg-accent-gold text-academic-navy font-semibold text-sm rounded text-center" onclick="openContactModal('assistantship'); toggleMobileMenu();">
+          Join Laboratory
+        </button>
+<button class="w-full py-2.5 border border-institutional-blue text-institutional-blue font-medium text-sm rounded text-center" onclick="openContactModal('inquiry'); toggleMobileMenu();">
+          Contact Lab Directors
+        </button>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION -->
+<section class="relative w-full min-h-[720px] lg:min-h-[760px] bg-gradient-to-b from-surface-white via-surface-soft to-surface-container/60 border-b border-subtle-border overflow-hidden flex items-center">
+<!-- 3D Interactive Three.js Academic Scene -->
+<div class="absolute inset-0 w-full h-full pointer-events-auto">
+<!-- STITCH_THREEJS_START:ANIMATION_13 class="absolute inset-0 w-full h-full bg-transparent" -->
+<div class="absolute inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_13" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_13');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // CVIS Academic Scientific 3D Visualization: Volumetric Point Cloud & Geometric Depth Mesh
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+camera.position.set(0, 0, 85);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.setClearColor(0x000000, 0);
+container.appendChild(renderer.domElement);
+
+const rootGroup = new THREE.Group();
+scene.add(rootGroup);
+
+// Institutional Palette:
+// Institutional Blue: #123F78, Deep Academic Navy: #172B4D, Secondary Blue: #2864A5, Warm Yellow: #F2C94C, Pure White: #FFFFFF
+const primaryBlue = new THREE.Color(0x123F78);
+const secondaryBlue = new THREE.Color(0x2864A5);
+const paleBlue = new THREE.Color(0xA6C8E8);
+const warmYellow = new THREE.Color(0xF2C94C);
+const pureWhite = new THREE.Color(0xFFFFFF);
+
+// 1. Spatial Volumetric Point Cloud (Scientific depth reconstruction)
+const particleCount = 3200;
+const pGeometry = new THREE.BufferGeometry();
+const positions = new Float32Array(particleCount * 3);
+const colors = new Float32Array(particleCount * 3);
+const originalPositions = new Float32Array(particleCount * 3);
+
+for (let i = 0; i < particleCount; i++) {
+  const theta = Math.random() * Math.PI * 2;
+  const phi = Math.acos((Math.random() * 2) - 1);
+  const r = 21 + (Math.sin(theta * 4) * Math.cos(phi * 3) * 3.5) + ((Math.random() - 0.5) * 5);
+
+  const x = r * Math.sin(phi) * Math.cos(theta);
+  const y = r * Math.sin(phi) * Math.sin(theta) * 0.92;
+  const z = r * Math.cos(phi);
+
+  positions[i * 3] = x;
+  positions[i * 3 + 1] = y;
+  positions[i * 3 + 2] = z;
+
+  originalPositions[i * 3] = x;
+  originalPositions[i * 3 + 1] = y;
+  originalPositions[i * 3 + 2] = z;
+
+  // Academic Color Depth Ramp: University Blue -> Secondary Blue -> Pale Blue & Pure White highlights
+  const normZ = (z + 22) / 44;
+  let c;
+  if (normZ < 0.45) {
+    c = primaryBlue.clone().lerp(secondaryBlue, normZ / 0.45);
+  } else if (normZ < 0.85) {
+    c = secondaryBlue.clone().lerp(paleBlue, (normZ - 0.45) / 0.4);
+  } else {
+    c = paleBlue.clone().lerp(pureWhite, (normZ - 0.85) / 0.15);
+  }
+  
+  // Rare warm yellow focal sensor marker (0.5% of points)
+  if (Math.random() < 0.015) {
+    c = warmYellow;
+  }
+
+  colors[i * 3] = c.r;
+  colors[i * 3 + 1] = c.g;
+  colors[i * 3 + 2] = c.b;
+}
+
+pGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+pGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+const pMaterial = new THREE.PointsMaterial({
+  size: 1.35,
+  vertexColors: true,
+  transparent: true,
+  opacity: 0.9,
+  blending: THREE.NormalBlending
+});
+const pointCloud = new THREE.Points(pGeometry, pMaterial);
+rootGroup.add(pointCloud);
+
+// 2. Polygonal Depth Mesh Lattice (Academic royal-blue wireframe)
+const meshGeo = new THREE.IcosahedronGeometry(19.5, 2);
+const wireframeMat = new THREE.MeshBasicMaterial({
+  color: 0x2864A5,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.28
+});
+const wireMesh = new THREE.Mesh(meshGeo, wireframeMat);
+rootGroup.add(wireMesh);
+
+// 3. Subtle Warm Golden-Yellow Scanning Plane
+const scanPlaneGeo = new THREE.PlaneGeometry(38, 38, 1, 1);
+const scanPlaneMat = new THREE.MeshBasicMaterial({
+  color: 0xF2C94C,
+  transparent: true,
+  opacity: 0.12,
+  side: THREE.DoubleSide,
+  depthWrite: false
+});
+const scanPlane = new THREE.Mesh(scanPlaneGeo, scanPlaneMat);
+scanPlane.rotation.x = Math.PI / 2;
+rootGroup.add(scanPlane);
+
+// Subtle golden scanning border ring
+const scanRingGeo = new THREE.RingGeometry(22, 22.6, 64);
+const scanRingMat = new THREE.MeshBasicMaterial({
+  color: 0xF2C94C,
+  transparent: true,
+  opacity: 0.55,
+  side: THREE.DoubleSide
+});
+const scanRing = new THREE.Mesh(scanRingGeo, scanRingMat);
+scanRing.rotation.x = Math.PI / 2;
+rootGroup.add(scanRing);
+
+// 4. Subtle Outer Spatial Bounding Bivector Box (Academic Navy / Slate Blue)
+const boxGeo = new THREE.BoxGeometry(40, 40, 40);
+const boxEdges = new THREE.EdgesGeometry(boxGeo);
+const boxLine = new THREE.LineSegments(boxEdges, new THREE.LineBasicMaterial({
+  color: 0x123F78,
+  transparent: true,
+  opacity: 0.25
+}));
+rootGroup.add(boxLine);
+
+// Interactivity state
+let isPaused = false;
+let targetMouseX = 0;
+let targetMouseY = 0;
+let mouseX = 0;
+let mouseY = 0;
+
+window.addEventListener('mousemove', (e) => {
+  const normX = (e.clientX / window.innerWidth) * 2 - 1;
+  const normY = -(e.clientY / window.innerHeight) * 2 + 1;
+  targetMouseX = normX * 0.4;
+  targetMouseY = normY * 0.3;
+});
+
+// Expose controls to global window for HTML UI buttons
+window.cvisToggleAnimation = function() {
+  isPaused = !isPaused;
+  return isPaused;
+};
+
+window.cvisResetView = function() {
+  targetMouseX = 0;
+  targetMouseY = 0;
+  mouseX = 0;
+  mouseY = 0;
+  rootGroup.rotation.set(0, 0, 0);
+};
+
+let clock = new THREE.Clock();
+let animId = null;
+
+function animate() {
+  animId = requestAnimationFrame(animate);
+  if (isPaused) return;
+
+  const time = clock.getElapsedTime();
+
+  // Smooth mouse damping
+  mouseX += (targetMouseX - mouseX) * 0.05;
+  mouseY += (targetMouseY - mouseY) * 0.05;
+
+  rootGroup.rotation.y = time * 0.15 + mouseX;
+  rootGroup.rotation.x = Math.sin(time * 0.1) * 0.08 + mouseY;
+
+  // Warm yellow scanning plane vertical oscillation
+  const scanY = Math.sin(time * 1.2) * 14;
+  scanPlane.position.y = scanY;
+  scanRing.position.y = scanY;
+  scanRing.rotation.z = time * 0.35;
+
+  // Organic point cloud breathing
+  const posArr = pGeometry.attributes.position.array;
+  for (let i = 0; i < particleCount; i++) {
+    const ox = originalPositions[i * 3];
+    const oy = originalPositions[i * 3 + 1];
+    const oz = originalPositions[i * 3 + 2];
+    const wave = Math.sin(time * 1.8 + ox * 0.18 + oy * 0.12) * 0.6;
+    posArr[i * 3] = ox + (ox / 24) * wave;
+    posArr[i * 3 + 1] = oy + (oy / 24) * wave;
+    posArr[i * 3 + 2] = oz + (oz / 24) * wave;
+  }
+  pGeometry.attributes.position.needsUpdate = true;
+
+  wireMesh.rotation.y = -time * 0.06;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  const w = container.clientWidth || window.innerWidth;
+  const h = container.clientHeight || window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_13 -->
+<!-- Subtle Academic Gradient overlay for text legibility -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-white via-surface-white/85 to-transparent pointer-events-none lg:w-3/5"></div>
+</div>
+<!-- Hero Content Container -->
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+<div class="max-w-2xl">
+<!-- Institutional Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface-white border border-subtle-border shadow-xs text-xs font-semibold text-institutional-blue mb-6">
+<span class="w-2 h-2 rounded-full bg-accent-gold"></span>
+            BRAC UNIVERSITY • DEPARTMENT OF COMPUTER SCIENCE &amp; ENGINEERING
+          </div>
+<!-- Main Title -->
+<h1 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-academic-navy tracking-tight leading-[1.15] mb-5">
+            Advancing Spatial Intelligence &amp; Computational Vision
+          </h1>
+<!-- Academic Mission Description -->
+<p class="text-base sm:text-lg text-on-surface-variant font-normal leading-relaxed mb-8">
+            The Computer Vision &amp; Intelligent Systems (CVIS) Laboratory conducts rigorous theoretical and translational research in volumetric image analysis, 3D geometric deep learning, and multi-modal perception.
+          </p>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 mb-10">
+<a class="px-6 py-3.5 bg-institutional-blue text-white font-medium text-sm rounded shadow hover:bg-institutional-blue/95 hover:-translate-y-0.5 transition-all inline-flex items-center gap-2" href="#research">
+<span>Our Research &amp; Discovery</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<a class="px-6 py-3.5 bg-surface-white text-institutional-blue border border-subtle-border font-medium text-sm rounded hover:bg-surface-soft hover:border-institutional-blue transition-all inline-flex items-center gap-2" href="#publications">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Selected Publications</span>
+</a>
+</div>
+<!-- Academic Metrics Summary -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-subtle-border/80">
+<div>
+<span class="block font-headline font-bold text-2xl text-academic-navy">48+</span>
+<span class="text-xs text-muted-text">Peer-Reviewed Papers</span>
+</div>
+<div>
+<span class="block font-headline font-bold text-2xl text-academic-navy">06</span>
+<span class="text-xs text-muted-text">Core Research Pillars</span>
+</div>
+<div>
+<span class="block font-headline font-bold text-2xl text-academic-navy">14</span>
+<span class="text-xs text-muted-text">Benches &amp; Sensor Rigs</span>
+</div>
+<div>
+<span class="block font-headline font-bold text-2xl text-academic-navy">2018</span>
+<span class="text-xs text-muted-text">Established Year</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3D Visualization Controls Floating Widget -->
+<div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 bg-surface-white/90 backdrop-blur-md border border-subtle-border p-3 rounded shadow-md max-w-xs text-xs">
+<div class="flex items-center justify-between gap-3 mb-2">
+<span class="font-semibold text-academic-navy flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 3D Volumetric Scene
+          </span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-primary-text hover:bg-surface-container transition-colors" id="animToggleBtn" onclick="toggle3DAnimation()" title="Pause / Resume 3D Rotation">
+<svg class="w-4 h-4" fill="none" id="pauseIcon" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="p-1 rounded text-primary-text hover:bg-surface-container transition-colors" onclick="reset3DView()" title="Reset Camera Rotation">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<p class="text-[11px] text-muted-text leading-tight">
+          Illustrative 3D spatial volumetric reconstruction of optical sensor point cloud data.
+        </p>
+</div>
+</section>
+<!-- SECTION: ABOUT & THEORETICAL FRAMEWORK -->
+<section class="py-16 sm:py-20 bg-surface-white border-b border-subtle-border" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl mb-12">
+<div class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-2">Institutional Mission</div>
+<h2 class="font-headline text-2xl sm:text-3xl font-bold text-academic-navy tracking-tight mb-4">
+            Computational Synthesis of Reality
+          </h2>
+<p class="text-base text-on-surface-variant leading-relaxed">
+            Founded within the Department of Computer Science &amp; Engineering at BRAC University, CVIS focuses on fundamental algorithms that bridge the gap between continuous physical optics and discrete neural decision making.
+          </p>
+</div>
+<!-- Academic Methodology Pipeline Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-soft border border-subtle-border p-6 rounded hover:border-institutional-blue transition-all">
+<div class="w-8 h-8 rounded bg-institutional-blue/10 text-institutional-blue font-bold flex items-center justify-center text-xs mb-4">
+              01
+            </div>
+<h3 class="font-headline font-semibold text-academic-navy text-base mb-2">Sensor Photometry</h3>
+<p class="text-sm text-muted-text leading-relaxed">
+              Capturing multi-view spectral photons and radiometric data with calibrated hardware genlocks and low optical distortion.
+            </p>
+</div>
+<div class="bg-surface-soft border border-subtle-border p-6 rounded hover:border-institutional-blue transition-all">
+<div class="w-8 h-8 rounded bg-institutional-blue/10 text-institutional-blue font-bold flex items-center justify-center text-xs mb-4">
+              02
+            </div>
+<h3 class="font-headline font-semibold text-academic-navy text-base mb-2">Spatial Depth Alignment</h3>
+<p class="text-sm text-muted-text leading-relaxed">
+              Formulating structured point clouds, dense occupancy grids, and real-time metric depth estimation on edge computing rigs.
+            </p>
+</div>
+<div class="bg-surface-soft border border-subtle-border p-6 rounded hover:border-institutional-blue transition-all">
+<div class="w-8 h-8 rounded bg-institutional-blue/10 text-institutional-blue font-bold flex items-center justify-center text-xs mb-4">
+              03
+            </div>
+<h3 class="font-headline font-semibold text-academic-navy text-base mb-2">Volumetric Representations</h3>
+<p class="text-sm text-muted-text leading-relaxed">
+              Extracting equivariant latent representations via 3D tiled convolutional networks and continuous radiance field functions.
+            </p>
+</div>
+<div class="bg-surface-soft border border-subtle-border p-6 rounded hover:border-institutional-blue transition-all">
+<div class="w-8 h-8 rounded bg-institutional-blue/10 text-institutional-blue font-bold flex items-center justify-center text-xs mb-4">
+              04
+            </div>
+<h3 class="font-headline font-semibold text-academic-navy text-base mb-2">Clinical &amp; Applied Inference</h3>
+<p class="text-sm text-muted-text leading-relaxed">
+              Validating algorithms across high-stakes benchmarks including clinical neuroimaging datasets and autonomous robotics tasks.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: CORE RESEARCH AREAS -->
+<section class="py-16 sm:py-20 bg-surface-soft border-b border-subtle-border" id="research">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+<div>
+<div class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-2">Academic Portfolio</div>
+<h2 class="font-headline text-2xl sm:text-3xl font-bold text-academic-navy tracking-tight">
+              Core Research Areas
+            </h2>
+</div>
+<p class="text-sm text-muted-text max-w-md">
+            Six interconnected research programs advancing foundational artificial intelligence and solving regional challenges in South Asia.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Pillar 1 -->
+<div class="bg-surface-white border border-subtle-border p-6 rounded hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-institutional-blue">Pillar 01</span>
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue text-[11px] font-semibold rounded">Active Laboratory Stream</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Computer Vision &amp; Image Processing
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Multi-spectral image denoising, sub-pixel optical flow estimation, neural radiance fields (NeRFs), and restoration for degraded optical media.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">NeRF Synthesis</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Optical Flow</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Wavelet Filtering</span>
+</div>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs text-muted-text">
+<span>Compute Allocation: 28%</span>
+<a class="text-institutional-blue font-semibold hover:underline" href="#publications">Publications →</a>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-white border border-subtle-border p-6 rounded hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-institutional-blue">Pillar 02</span>
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue text-[11px] font-semibold rounded">Foundational AI</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Artificial Intelligence &amp; Machine Learning
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Self-supervised vision foundation models, geometric neural priors, multimodal feature grounding, and ultra-efficient edge tensor quantization.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Vision Transformers</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Edge Quantization</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Self-Supervision</span>
+</div>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs text-muted-text">
+<span>Compute Allocation: 34%</span>
+<a class="text-institutional-blue font-semibold hover:underline" href="#publications">Publications →</a>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-white border border-subtle-border p-6 rounded hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-institutional-blue">Pillar 03</span>
+<span class="px-2 py-0.5 bg-rose-50 text-rose-700 text-[11px] font-semibold rounded">Biomedical Impact</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Medical Image &amp; Health Informatics
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                3D MRI/CT voxel brain tumor delineation, oncological whole-slide histopathology classification, and privacy-preserving federated radiomics pipelines.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">3D Brain Segmentation</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">MONAI Framework</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Histopathology</span>
+</div>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs text-muted-text">
+<span>Verified Dice Score: 0.942</span>
+<a class="text-institutional-blue font-semibold hover:underline" href="#flagship-paper">Case Monograph →</a>
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-white border border-subtle-border p-6 rounded hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-institutional-blue">Pillar 04</span>
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue text-[11px] font-semibold rounded">Geometric Systems</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                3D Vision &amp; Spatial Computing
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Real-time monocular metric depth recovery, dense simultaneous localization and mapping (SLAM), and volumetric 3D Gaussian splat reconstructions.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Gaussian Splatting</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Dense SLAM</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Point Clouds</span>
+</div>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs text-muted-text">
+<span>Sensor Latency: 12ms</span>
+<a class="text-institutional-blue font-semibold hover:underline" href="#publications">Publications →</a>
+</div>
+</div>
+<!-- Pillar 5 -->
+<div class="bg-surface-white border border-subtle-border p-6 rounded hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-institutional-blue">Pillar 05</span>
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue text-[11px] font-semibold rounded">Environmental Data</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Data Science &amp; Predictive Analytics
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Satellite remote sensing analysis, spatio-temporal urban flood modeling, transportation mobility intelligence, and meteorological event forecasts.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Geospatial Telemetry</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Spatio-Temporal Models</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Climate AI</span>
+</div>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs text-muted-text">
+<span>Urban Nodes: 2,400+</span>
+<a class="text-institutional-blue font-semibold hover:underline" href="#publications">Publications →</a>
+</div>
+</div>
+<!-- Pillar 6 -->
+<div class="bg-surface-white border border-subtle-border p-6 rounded hover:shadow-md transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-institutional-blue">Pillar 06</span>
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue text-[11px] font-semibold rounded">Human-Computer Interaction</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Virtual, Augmented &amp; Mixed Reality (XR)
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Holographic optical telepresence, low-latency foveated rendering pipelines, and visual-haptic spatial synchronization for medical simulation.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-6">
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Foveated Rendering</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Stereo Passthrough</span>
+<span class="px-2 py-0.5 bg-surface-container text-primary-text text-[11px] rounded">Spatial Audio</span>
+</div>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs text-muted-text">
+<span>Refresh Rate: 120 FPS</span>
+<a class="text-institutional-blue font-semibold hover:underline" href="#facilities">XR Bench Details →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: SELECTED PEER-REVIEWED PUBLICATIONS -->
+<section class="py-16 sm:py-20 bg-surface-white border-b border-subtle-border" id="publications">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<div class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-2">Scholarly Output</div>
+<h2 class="font-headline text-2xl sm:text-3xl font-bold text-academic-navy tracking-tight">
+              Selected Peer-Reviewed Publications
+            </h2>
+</div>
+<!-- Interactive Year Filters with count badge -->
+<div class="flex flex-wrap items-center gap-1.5 bg-surface-container p-1 rounded border border-subtle-border text-xs" role="tablist">
+<button class="pub-filter-btn px-3 py-1.5 rounded font-medium bg-institutional-blue text-white shadow-xs transition-colors" onclick="filterPublications('all', this)">
+              All Publications <span class="ml-1 opacity-75">(4)</span>
+</button>
+<button class="pub-filter-btn px-3 py-1.5 rounded font-medium text-primary-text hover:bg-surface-white transition-colors" onclick="filterPublications('2024', this)">
+              2024 <span class="ml-1 opacity-75">(2)</span>
+</button>
+<button class="pub-filter-btn px-3 py-1.5 rounded font-medium text-primary-text hover:bg-surface-white transition-colors" onclick="filterPublications('2023', this)">
+              2023 <span class="ml-1 opacity-75">(2)</span>
+</button>
+<button class="pub-filter-btn px-3 py-1.5 rounded font-medium text-primary-text hover:bg-surface-white transition-colors" onclick="filterPublications('preprints', this)">
+              Preprints <span class="ml-1 opacity-75">(1)</span>
+</button>
+</div>
+</div>
+<!-- FLAGSHIP MONOGRAPH CARD -->
+<div class="pub-item mb-8 bg-surface-soft border-2 border-institutional-blue/30 rounded p-6 lg:p-8 shadow-sm" data-year="2024" id="flagship-paper">
+<div class="flex flex-col lg:flex-row gap-8 items-start">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="px-2.5 py-0.5 bg-institutional-blue text-white font-semibold text-xs rounded uppercase tracking-wide">
+                  Flagship Monograph • IEEE / MICCAI
+                </span>
+<span class="text-xs font-semibold text-institutional-blue">Year: 2024</span>
+<span class="text-xs text-muted-text">DOI: 10.1109/TPAMI.2024.3189021</span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold text-academic-navy mb-3 leading-snug">
+                3D Brain Image Segmentation Using 3D Tiled Convolution Neural Networks
+              </h3>
+<p class="text-sm text-primary-text font-medium mb-3">
+<span class="text-academic-navy font-semibold">Authors:</span> Dr. Sadia Hamid Kazi, Prof. Md. Khalilur Rahman, Senior Research Investigators • BRAC University CSE.
+              </p>
+<div class="bg-surface-white border border-subtle-border p-4 rounded mb-5">
+<div class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-1">Abstract Summary:</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                  Presents an efficient volumetric convolutional network architecture that partitions large 3D MR brain volumes into context-preserving tiled sub-domains. The method reduces computational memory requirements by 42% while attaining high boundary Dice scores on validated clinical datasets (BraTS benchmark).
+                </p>
+</div>
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="text-xs px-2.5 py-1 bg-surface-container text-primary-text font-mono rounded">#VolumetricCNN</span>
+<span class="text-xs px-2.5 py-1 bg-surface-container text-primary-text font-mono rounded">#MedicalNeuroimaging</span>
+<span class="text-xs px-2.5 py-1 bg-surface-container text-primary-text font-mono rounded">#BraTS_Benchmark</span>
+<span class="text-xs px-2.5 py-1 bg-institutional-blue/10 text-institutional-blue font-semibold text-xs rounded">Dice Score: 0.941</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<button class="px-4 py-2 bg-institutional-blue text-white text-xs sm:text-sm font-medium rounded hover:bg-institutional-blue/90 transition-all inline-flex items-center gap-1.5 shadow-xs" onclick="viewPaperDetails('3dbrain')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Read Full Abstract &amp; Metadata</span>
+</button>
+<button class="px-3.5 py-2 bg-surface-white border border-subtle-border text-academic-navy text-xs sm:text-sm font-medium rounded hover:border-institutional-blue transition-all inline-flex items-center gap-1.5" onclick="copyBibTeX('kazi2024tiled')">
+<svg class="w-4 h-4 text-muted-text" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Copy BibTeX</span>
+</button>
+<a class="px-3.5 py-2 bg-surface-white border border-subtle-border text-institutional-blue text-xs sm:text-sm font-medium rounded hover:bg-surface-container transition-all inline-flex items-center gap-1.5" href="#publications" onclick="showFeedbackToast('Preprint resource link accessible via institutional repository.')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Download PDF [1.8 MB]</span>
+</a>
+</div>
+</div>
+<!-- Visual Dossier / Volumetric Render Card -->
+<div class="w-full lg:w-80 bg-surface-white border border-subtle-border p-4 rounded shrink-0">
+<div class="text-[11px] font-semibold text-muted-text uppercase tracking-wider mb-2 flex justify-between">
+<span>Volumetric Segmentation</span>
+<span class="text-institutional-blue">Validated BraTS</span>
+</div>
+<img alt="Scientific 3D medical MRI brain volumetric segmentation illustration showing segmented boundaries" class="w-full h-48 object-cover rounded border border-subtle-border mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdaQ3mbHAj9o4O44zScv8WVDGz7xHt86z_oBLk2Ff4qi8OpoRoBkWyaO5dBYDjnbXwxhqKLhahRp5t0r1lbOSpztYTr2HOg-LzDZOZWe-1M2S1NxhePog0cTKnU7_85F-uy6fJGEU8rVPpbkbNms09QBE421BLpaieqa__ijHEj_Js1WRE00D5JamxUBdA0aA3riGeiChcx1XlKFVg6gRFOBRsNCRCcJ31ojvbWdmNsyfGbC-OW-gt"/>
+<div class="grid grid-cols-2 gap-2 text-[11px] bg-surface-soft p-2.5 rounded border border-subtle-border/60">
+<div>
+<span class="text-muted-text block">Voxel Sub-domains</span>
+<span class="font-mono font-semibold text-academic-navy">16 × 16 × 16</span>
+</div>
+<div>
+<span class="text-muted-text block">Mean Inference Time</span>
+<span class="font-mono font-semibold text-academic-navy">41.2ms / Vol</span>
+</div>
+</div>
+<div class="text-[10px] text-muted-text mt-2 text-center">
+                Visual representation of multi-planar volumetric slice output.
+              </div>
+</div>
+</div>
+</div>
+<!-- PUBLICATION ARCHIVE LIST -->
+<div class="border border-subtle-border rounded divide-y divide-subtle-border bg-surface-white">
+<!-- Paper 01 -->
+<div class="pub-item p-5 hover:bg-surface-soft transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4" data-year="2024">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue font-semibold text-xs rounded">
+                  CVPR Workshop 2024
+                </span>
+<span class="text-xs text-muted-text font-medium">Ref: BRACU-CVIS-092</span>
+</div>
+<h4 class="font-headline font-bold text-academic-navy text-base hover:text-institutional-blue transition-colors cursor-pointer" onclick="viewPaperDetails('pointcloud')">
+                Robust Point Cloud Registration via Adaptive Density Normalization
+              </h4>
+<p class="text-xs text-muted-text mt-1">
+                CVIS Spatial Computing Group • S. Ahmed, F. Hossain, M. Islam, Prof. Md. Khalilur Rahman.
+              </p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3 py-1.5 bg-surface-white border border-subtle-border text-academic-navy text-xs font-medium rounded hover:bg-surface-container transition-all" onclick="copyBibTeX('ahmed2024point')">
+                BibTeX
+              </button>
+<button class="px-3 py-1.5 bg-institutional-blue text-white text-xs font-medium rounded hover:bg-institutional-blue/90 transition-all inline-flex items-center gap-1" onclick="showFeedbackToast('Opening CVPR proceedings archive document.')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+                PDF [0.8 MB]
+              </button>
+</div>
+</div>
+<!-- Paper 02 -->
+<div class="pub-item p-5 hover:bg-surface-soft transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4" data-year="2023">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue font-semibold text-xs rounded">
+                  IEEE Access 2023
+                </span>
+<span class="text-xs text-muted-text font-medium">Ref: BRACU-CVIS-081</span>
+</div>
+<h4 class="font-headline font-bold text-academic-navy text-base hover:text-institutional-blue transition-colors cursor-pointer" onclick="viewPaperDetails('retinal')">
+                Low-Cost Retinal Lesion Detection using Attention-Guided Feature Pyramids
+              </h4>
+<p class="text-xs text-muted-text mt-1">
+                Biomedical Informatics Unit • R. Rahman, K. Tahsin, A. Chowdhury, Dr. Sadia Hamid Kazi.
+              </p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3 py-1.5 bg-surface-white border border-subtle-border text-academic-navy text-xs font-medium rounded hover:bg-surface-container transition-all" onclick="copyBibTeX('rahman2023retinal')">
+                BibTeX
+              </button>
+<button class="px-3 py-1.5 bg-institutional-blue text-white text-xs font-medium rounded hover:bg-institutional-blue/90 transition-all inline-flex items-center gap-1" onclick="showFeedbackToast('Opening IEEE publication record.')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+                PDF [1.4 MB]
+              </button>
+</div>
+</div>
+<!-- Paper 03 -->
+<div class="pub-item p-5 hover:bg-surface-soft transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4" data-year="2023">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue font-semibold text-xs rounded">
+                  Pattern Recognition Letters 2023
+                </span>
+<span class="text-xs text-muted-text font-medium">Ref: BRACU-CVIS-074</span>
+</div>
+<h4 class="font-headline font-bold text-academic-navy text-base hover:text-institutional-blue transition-colors cursor-pointer" onclick="viewPaperDetails('monocular')">
+                Real-Time Monocular Depth Estimation on Constrained Embedded Architectures
+              </h4>
+<p class="text-xs text-muted-text mt-1">
+                Autonomous Perception Laboratory • T. Mahmud, S. Karim, N. Haque, Prof. Md. Khalilur Rahman.
+              </p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3 py-1.5 bg-surface-white border border-subtle-border text-academic-navy text-xs font-medium rounded hover:bg-surface-container transition-all" onclick="copyBibTeX('mahmud2023edge')">
+                BibTeX
+              </button>
+<button class="px-3 py-1.5 bg-institutional-blue text-white text-xs font-medium rounded hover:bg-institutional-blue/90 transition-all inline-flex items-center gap-1" onclick="showFeedbackToast('Opening Pattern Recognition Letters preprint.')">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+                PDF [2.1 MB]
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: FACULTY & RESEARCH INVESTIGATORS -->
+<section class="py-16 sm:py-20 bg-surface-soft border-b border-subtle-border" id="people">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+<div>
+<div class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-2">Academic Team</div>
+<h2 class="font-headline text-2xl sm:text-3xl font-bold text-academic-navy tracking-tight">
+              Faculty &amp; Research Investigators
+            </h2>
+</div>
+<p class="text-sm text-muted-text max-w-md">
+            Department of Computer Science &amp; Engineering faculty mentors, doctoral scholars, and undergraduate researchers at BRAC University.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Member 1: Prof. Khalilur Rahman -->
+<div class="bg-surface-white border border-subtle-border rounded p-6 flex flex-col justify-between hover:border-institutional-blue transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2 py-0.5 bg-institutional-blue text-white text-[11px] font-semibold rounded">
+                  Principal Investigator
+                </span>
+<span class="text-xs text-muted-text">Tenure: 2018–Present</span>
+</div>
+<div class="w-20 h-20 rounded bg-surface-container overflow-hidden border border-subtle-border mb-4">
+<img alt="Portrait of Professor Md. Khalilur Rahman" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn90WQpryCR1-mQ6RdPxgYsI5Tb33FfrhYyv8lDSefhOfwUvjDhtVjkIMruouoArmfYYWvZyfDnMsBB5OVIQLtwEtcIp1WKDBRaIPam2us1PTrKT54eLM6_e7g32PuFHKNmgoOehpLC4D22mkZq74LTGUPQQsFf27TkhSFdOvWrWmSB6BnpI7D9dgE5OH8x09mYSpgsroHUvUxlbOq-AxcJXaiqd1RqNt9U9mBboHxqXX-_SqhBgF9"/>
+</div>
+<h3 class="font-headline font-bold text-lg text-academic-navy mb-0.5">
+                Prof. Md. Khalilur Rahman, Ph.D.
+              </h3>
+<p class="text-xs font-medium text-institutional-blue mb-3">
+                Professor, CSE &amp; Founding Director, CVIS Lab
+              </p>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Specialization: 3D Computer Vision, Robotics Machine Perception, Geometric Deep Learning, and Autonomous Navigation Systems.
+              </p>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs">
+<span class="text-muted-text">3,200+ Google Scholar Citations</span>
+<a class="text-institutional-blue font-semibold hover:underline inline-flex items-center gap-1" href="https://scholar.google.com" rel="noopener noreferrer" target="_blank">
+<span>Scholar Profile</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- Member 2: Dr. Sadia Hamid Kazi -->
+<div class="bg-surface-white border border-subtle-border rounded p-6 flex flex-col justify-between hover:border-institutional-blue transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2 py-0.5 bg-institutional-blue/10 text-institutional-blue text-[11px] font-semibold rounded">
+                  Associate Director
+                </span>
+<span class="text-xs text-muted-text">Tenure: 2020–Present</span>
+</div>
+<div class="w-20 h-20 rounded bg-surface-container overflow-hidden border border-subtle-border mb-4">
+<img alt="Portrait of Dr. Sadia Hamid Kazi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRazmEnKX6zYirvsU2bbKgkjh9kM65L8lNSuZAfC3C7JPOGvjIFqdbSiBuEsBVzGsTjmk38BlxV-gPErIvE0-LL4F20yFI6CIXRK9_aFlrsjlauQk9Kjl0ZCJNyUS3WGOl9lp-qIBS1eQ11Uf4U5kjz3_-_R61hE8_NP4Z9Rg8e67txS9wT9-zXOlaxvLqRnYtwicus62HnwdQmL9He6vzeK9zkISlXFYDrXj8RT6ib3YGeTinGdO"/>
+</div>
+<h3 class="font-headline font-bold text-lg text-academic-navy mb-0.5">
+                Dr. Sadia Hamid Kazi, Ph.D.
+              </h3>
+<p class="text-xs font-medium text-institutional-blue mb-3">
+                Associate Professor &amp; Co-Lead, Biomedical Vision
+              </p>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Specialization: Medical Image Computing, Deep Tiled Volumetric Networks, Radiomics, and Clinical Computer-Aided Diagnostics.
+              </p>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs">
+<span class="text-muted-text">1,850+ Google Scholar Citations</span>
+<a class="text-institutional-blue font-semibold hover:underline inline-flex items-center gap-1" href="https://scholar.google.com" rel="noopener noreferrer" target="_blank">
+<span>Scholar Profile</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- Member 3: Tanvir Hasan Chowdhury -->
+<div class="bg-surface-white border border-subtle-border rounded p-6 flex flex-col justify-between hover:border-institutional-blue transition-all">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="px-2 py-0.5 bg-surface-container text-academic-navy text-[11px] font-semibold rounded">
+                  Senior Research Fellow
+                </span>
+<span class="text-xs text-muted-text">Tenure: 2022–Present</span>
+</div>
+<div class="w-20 h-20 rounded bg-surface-container overflow-hidden border border-subtle-border mb-4">
+<img alt="Portrait of Tanvir Hasan Chowdhury" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1GZrlmESuamuwBiyqTBrhQMuIM61TBfKWnhMcbcWE-t6dBvKovicbHxLkBvtpSf4vz10di_sng8y1sQRiycP9Jo_7kieJCYtiBfnZg_8UQrcir_dXgHROwEnlQdlR4O96tKSoiBsLSGHBmtXaxeNrncaNg-saBCYpPDwnM7GrNPJIhWNouyZYW5XK7IFYSGO5LH3q27l9E6ycv8wB5ILrjzDEs-pMfBcAZr0ZIp1DP_5WVenq-_zn"/>
+</div>
+<h3 class="font-headline font-bold text-lg text-academic-navy mb-0.5">
+                Tanvir Hasan Chowdhury
+              </h3>
+<p class="text-xs font-medium text-institutional-blue mb-3">
+                Lead Doctoral Fellow, Spatial XR &amp; NeRFs
+              </p>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Specialization: Neural Radiance Fields, 3D Gaussian Splatting, Real-Time Edge SLAM, and Low-Latency Spatial Computing.
+              </p>
+</div>
+<div class="pt-4 border-t border-subtle-border flex items-center justify-between text-xs">
+<span class="text-muted-text">9 arXiv Preprints &amp; Patents</span>
+<a class="text-institutional-blue font-semibold hover:underline inline-flex items-center gap-1" href="https://arxiv.org" rel="noopener noreferrer" target="_blank">
+<span>arXiv Archive</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Student & Alumni Placement Banner -->
+<div class="mt-8 bg-surface-white border border-subtle-border p-5 rounded flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="font-semibold text-academic-navy">Research Assistants:</span>
+<span class="text-on-surface-variant">18 Active Undergrad &amp; Graduate RAs engaged in funded projects.</span>
+</div>
+<div class="text-on-surface-variant">
+<span class="font-semibold text-academic-navy">Alumni Placements:</span> NUS, Max Planck Institute, Oxford, EPFL, Google DeepMind.
+          </div>
+</div>
+</div>
+</section>
+<!-- SECTION: LABORATORY FACILITIES & INSTRUMENTATION -->
+<section class="py-16 sm:py-20 bg-surface-white border-b border-subtle-border" id="facilities">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+<div>
+<div class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-2">Instrumentation &amp; Hardware</div>
+<h2 class="font-headline text-2xl sm:text-3xl font-bold text-academic-navy tracking-tight">
+              Laboratory Research Facilities &amp; Instrumentation
+            </h2>
+</div>
+<p class="text-sm text-muted-text max-w-md">
+            Specialized instrumentation benches, GPU compute clusters, and optical capture systems located at BRAC University.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Facility 1 -->
+<div class="bg-surface-soft border border-subtle-border rounded p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3 text-xs">
+<span class="font-bold text-institutional-blue uppercase">Bench 01 • Calibration</span>
+<span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-medium">Operational</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Multi-Camera Optical Rig &amp; LiDAR Calibrator
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Synchronized 8-sensor Basler industrial camera array equipped with high-density Livox LiDAR units for simultaneous optical photometry and depth-plane calibration.
+              </p>
+<div class="grid grid-cols-2 gap-3 bg-surface-white p-3 rounded border border-subtle-border text-xs mb-4">
+<div>
+<span class="text-muted-text block">Synchronization</span>
+<span class="font-semibold text-academic-navy">&lt; 0.05 ms Hardware Genlock</span>
+</div>
+<div>
+<span class="text-muted-text block">Spectral Band</span>
+<span class="font-semibold text-academic-navy">RGB + NIR 850nm / 940nm</span>
+</div>
+</div>
+</div>
+<div class="h-44 rounded overflow-hidden border border-subtle-border">
+<img alt="Research multi-camera optical calibration rig setup" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdPp5Sw300eQnYgSoWgRJJJGdpYV4gRSR7pVs_Tn3l9c_Phgi_ADNKb5z3iYKcYwjRTDiu7KpB82VK-tUZgFEe-L_SRLL7YodhKPh6lcAe-TJ1UINS_d_MdHpkmTaBkpoeAOo_-ADbYRl0WRBI1ZW7J4XDL1ivXoYVUYfirl6jEjHe94WhXyberPp_86_aPW065PclmotCttnbihtatW-BXiPrd3jURsxxKkKkZANjGx4eDiUu3SA0"/>
+</div>
+</div>
+<!-- Facility 2 -->
+<div class="bg-surface-soft border border-subtle-border rounded p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3 text-xs">
+<span class="font-bold text-institutional-blue uppercase">Bench 02 • Compute Cluster</span>
+<span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-medium">Online Node Array</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                High-Density GPU Volumetric Compute Cluster
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Dedicated on-premise rack servers powered by NVIDIA RTX A6000 and DGX nodes providing parallel tensor acceleration for large-scale 3D medical volume inference and NeRF rendering.
+              </p>
+<div class="grid grid-cols-2 gap-3 bg-surface-white p-3 rounded border border-subtle-border text-xs mb-4">
+<div>
+<span class="text-muted-text block">Aggregate GPU Memory</span>
+<span class="font-semibold text-academic-navy">384 GB GDDR6 ECC</span>
+</div>
+<div>
+<span class="text-muted-text block">Network Interconnect</span>
+<span class="font-semibold text-academic-navy">100 Gbps InfiniBand</span>
+</div>
+</div>
+</div>
+<div class="h-44 rounded overflow-hidden border border-subtle-border">
+<img alt="University high-performance GPU cluster server racks" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfKTwKHimT5rqN1aVMpWJc3cmxjmjLkXlb2PGlVzqX1m5KcPtJi52Bdrhp7j5Ac9LvoV38DGrOq4Uqz53OJRJD8eMdet9zWTkXjz20OudH_TbtatW8UQR3vnLYHofUsNIRo6gPFVMQlj2xiX405Zgs01vElUEPVnRQmhCfnI545uQPil_IfmLQVGh1M62RKBAKMecC2VG2p1JJ2n0bidEceoQiWk9ko_Tw3Hh2zHftZNdMTxsPmDy0"/>
+</div>
+</div>
+<!-- Facility 3 -->
+<div class="bg-surface-soft border border-subtle-border rounded p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3 text-xs">
+<span class="font-bold text-institutional-blue uppercase">Bench 03 • Spatial XR</span>
+<span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-medium">Tracking Active</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Spatial Computing &amp; Mixed Reality Laboratory
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Stereoscopic passthrough environment with sub-millimeter optical motion capture cameras for tele-robotic surgical teleoperation research and gaze-contingent foveated rendering studies.
+              </p>
+<div class="grid grid-cols-2 gap-3 bg-surface-white p-3 rounded border border-subtle-border text-xs mb-4">
+<div>
+<span class="text-muted-text block">Display Resolution</span>
+<span class="font-semibold text-academic-navy">70 PPD Bionic Pass-Through</span>
+</div>
+<div>
+<span class="text-muted-text block">Optical Mocap Drift</span>
+<span class="font-semibold text-academic-navy">&lt; 0.1 mm Spatial Error</span>
+</div>
+</div>
+</div>
+<div class="h-44 rounded overflow-hidden border border-subtle-border">
+<img alt="Spatial computing and XR headset laboratory research" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPlZGRUHwK-B50Kkfz_C9lcgmfDZEnZEwgcqMUwYnti-vsCTqDh-ySKA2RUeEp70om1nQxPBITE_GMvkEATyAoLqf_-RuQVE-N35dVpTWg5uG32hpMK_2xU7bRLgdzla7d6L2SsHgONY458sU1DTEvXA3jm1GRQYWlLR-NAdbtmwq3ohcYiqOoleEhY02Tu4DUIMpNFcBhDzEe917AMLP621RCtZZlKNgU51T5tVDkQ3SmAqh-q6Mx"/>
+</div>
+</div>
+<!-- Facility 4 -->
+<div class="bg-surface-soft border border-subtle-border rounded p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3 text-xs">
+<span class="font-bold text-institutional-blue uppercase">Bench 04 • Clinical Imaging</span>
+<span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-medium">DICOM Ready</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-academic-navy mb-2">
+                Medical Informatics &amp; PACS Ground-Truth Terminal
+              </h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                Compliant high-throughput DICOM ingestion terminal paired with calibrated 12MP diagnostic displays for blinded ground-truth segmentation by collaborating clinicians.
+              </p>
+<div class="grid grid-cols-2 gap-3 bg-surface-white p-3 rounded border border-subtle-border text-xs mb-4">
+<div>
+<span class="text-muted-text block">Calibration Standard</span>
+<span class="font-semibold text-academic-navy">DICOM Part 14 GSDF</span>
+</div>
+<div>
+<span class="text-muted-text block">Deployment Protocol</span>
+<span class="font-semibold text-academic-navy">MONAI / HL7 Ingestion</span>
+</div>
+</div>
+</div>
+<div class="h-44 rounded overflow-hidden border border-subtle-border">
+<img alt="Medical PACS diagnostic workstation in diagnostic research suite" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF91JEaISXvqbyWkaTLiXLL6u92th6-X-iHpiZvR5c6tzqw2DBDhrGEXU9sLcBifzcLyDg_nTtiUM0FEsEVlm1svJVnRxg2PIH-pgn1FeFKu8so16NpqFNF_dOYZpyQFq_yWNNsBdiItT5D6S1rGoSTsnvDG372vWVpKEitctw2nkuXQVXVozEq40KOqnCn2EXngYFjsEPsdboBilyAlzuHqMHq9ZcShoGP07et9snxazRqISC2hPQ"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: SEMINARS, COLLOQUIA & WORKSHOPS -->
+<section class="py-16 sm:py-20 bg-surface-soft border-b border-subtle-border" id="seminars">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<div class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-2">Intellectual Exchange</div>
+<h2 class="font-headline text-2xl sm:text-3xl font-bold text-academic-navy tracking-tight">
+              Seminars, Colloquia &amp; Workshops
+            </h2>
+</div>
+<p class="text-sm text-muted-text max-w-md">
+            Regular colloquia connecting BRAC University researchers with global faculty and leading industry laboratories.
+          </p>
+</div>
+<div class="space-y-4">
+<!-- Upcoming Seminar -->
+<div class="bg-surface-white border border-subtle-border rounded p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-institutional-blue transition-all">
+<div class="flex items-start gap-4">
+<span class="px-3 py-1 bg-accent-gold text-academic-navy font-bold text-xs rounded uppercase tracking-wide shrink-0 mt-0.5">
+                Upcoming
+              </span>
+<div>
+<div class="text-xs text-muted-text mb-1">
+                  October 24, 2025 • 16:00 UTC+6 • Auditorium UB02 &amp; Hybrid Virtual Stream
+                </div>
+<h3 class="font-headline font-bold text-academic-navy text-base">
+                  Geometric Deep Learning in Non-Euclidean Machine Vision
+                </h3>
+<p class="text-xs text-on-surface-variant mt-1">
+                  Invited Keynote by Visiting Scholar • Manifold representations and gauge equivariance in spatial neural networks.
+                </p>
+</div>
+</div>
+<button class="px-4 py-2 bg-institutional-blue text-white text-xs font-semibold rounded hover:bg-institutional-blue/90 transition-all shrink-0" onclick="registerSeminar('Geometric Deep Learning')">
+              Register for Seminar
+            </button>
+</div>
+<!-- Past Colloquium 1 -->
+<div class="bg-surface-white border border-subtle-border rounded p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-soft transition-all">
+<div class="flex items-start gap-4">
+<span class="px-3 py-1 bg-surface-container text-primary-text font-medium text-xs rounded uppercase tracking-wide shrink-0 mt-0.5">
+                Recent
+              </span>
+<div>
+<div class="text-xs text-muted-text mb-1">
+                  September 12, 2025 • CVIS Internal Colloquium Series
+                </div>
+<h3 class="font-headline font-semibold text-academic-navy text-base">
+                  Frontiers in 3D Gaussian Splatting for Real-Time Robot SLAM
+                </h3>
+<p class="text-xs text-on-surface-variant mt-1">
+                  Lab Presentation • Comparing explicit radiance representations with coordinate networks on aerial platforms.
+                </p>
+</div>
+</div>
+<button class="px-4 py-2 border border-subtle-border text-academic-navy text-xs font-medium rounded hover:bg-surface-container transition-all shrink-0" onclick="showFeedbackToast('Accessing recorded seminar archive in University repository.')">
+              View Recording
+            </button>
+</div>
+<!-- Workshop -->
+<div class="bg-surface-white border border-subtle-border rounded p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-surface-soft transition-all">
+<div class="flex items-start gap-4">
+<span class="px-3 py-1 bg-surface-container text-primary-text font-medium text-xs rounded uppercase tracking-wide shrink-0 mt-0.5">
+                Workshop
+              </span>
+<div>
+<div class="text-xs text-muted-text mb-1">
+                  August 04, 2025 • Intensive 2-Day Computational Bootcamp
+                </div>
+<h3 class="font-headline font-semibold text-academic-navy text-base">
+                  Hands-on Volumetric Medical Segmentation with PyTorch &amp; MONAI
+                </h3>
+<p class="text-xs text-on-surface-variant mt-1">
+                  Graduate Technical Clinic • Data pipelines, sliding-window tiled inferencing, and BraTS benchmark workflows.
+                </p>
+</div>
+</div>
+<button class="px-4 py-2 border border-subtle-border text-academic-navy text-xs font-medium rounded hover:bg-surface-container transition-all shrink-0" onclick="showFeedbackToast('Downloading workshop notebook repositories.')">
+              Course Notebooks
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: OPPORTUNITIES TO JOIN & COLLABORATE -->
+<section class="py-16 sm:py-24 bg-academic-navy text-white relative" id="join">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-3xl mx-auto text-center mb-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-accent-gold text-xs font-semibold mb-4">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-gold"></span>
+            Academic Cohort Open for 2025–2026
+          </div>
+<h2 class="font-headline text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+            Opportunities to Join &amp; Collaborate
+          </h2>
+<p class="text-base text-white/80 leading-relaxed">
+            We welcome disciplined students, visiting scholars, and academic partners passionate about computational vision, geometric machine learning, and medical diagnostics.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Pathway 1 -->
+<div class="bg-white/5 border border-white/10 p-6 rounded hover:bg-white/10 transition-colors">
+<span class="text-xs font-bold uppercase tracking-wider text-accent-gold block mb-2">01 • Academic Entry</span>
+<h3 class="font-headline text-lg font-bold text-white mb-2">Graduate &amp; Undergrad RAs</h3>
+<p class="text-sm text-white/70 leading-relaxed mb-4">
+              Direct laboratory placement with GPU cluster allocation, thesis mentorship, and opportunities for co-authorship in peer-reviewed journals.
+            </p>
+<ul class="text-xs text-white/60 space-y-1.5">
+<li>• Minimum CGPA 3.50 or strong math profile</li>
+<li>• Proficiency in PyTorch and linear algebra</li>
+</ul>
+</div>
+<!-- Pathway 2 -->
+<div class="bg-white/5 border border-white/10 p-6 rounded hover:bg-white/10 transition-colors">
+<span class="text-xs font-bold uppercase tracking-wider text-accent-gold block mb-2">02 • Visiting Scholars</span>
+<h3 class="font-headline text-lg font-bold text-white mb-2">Faculty &amp; Postdoc Collaborations</h3>
+<p class="text-sm text-white/70 leading-relaxed mb-4">
+              Joint research grant applications, sabbatical invitations, co-supervision of doctoral candidates, and mutual dataset exchange.
+            </p>
+<ul class="text-xs text-white/60 space-y-1.5">
+<li>• Sabbatical research programs</li>
+<li>• Co-investigator on regional grant proposals</li>
+</ul>
+</div>
+<!-- Pathway 3 -->
+<div class="bg-white/5 border border-white/10 p-6 rounded hover:bg-white/10 transition-colors">
+<span class="text-xs font-bold uppercase tracking-wider text-accent-gold block mb-2">03 • Applied R&amp;D</span>
+<h3 class="font-headline text-lg font-bold text-white mb-2">Institutional Partnerships</h3>
+<p class="text-sm text-white/70 leading-relaxed mb-4">
+              Collaborative trials with medical hospitals, spatial robotics verification, and deployment of vision solutions for national infrastructure.
+            </p>
+<ul class="text-xs text-white/60 space-y-1.5">
+<li>• Hospital radiomics validations</li>
+<li>• Industrial embedded sensing pilots</li>
+</ul>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<button class="px-6 py-3.5 bg-accent-gold text-academic-navy font-semibold text-sm rounded shadow hover:brightness-95 transition-all inline-flex items-center gap-2" onclick="openContactModal('assistantship')">
+<span>Apply for Research Assistantship</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="px-6 py-3.5 bg-white/10 border border-white/20 text-white font-medium text-sm rounded hover:bg-white/20 transition-all inline-flex items-center gap-2" onclick="openContactModal('inquiry')">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Contact Lab Directors</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- ACADEMIC FOOTER -->
+<footer class="bg-surface-white border-t border-subtle-border text-on-surface-variant text-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+<!-- Lab Info -->
+<div class="lg:col-span-5 space-y-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-institutional-blue text-white flex items-center justify-center font-headline font-bold text-sm">
+              C
+            </div>
+<span class="font-headline font-bold text-academic-navy text-base">CVIS Laboratory • BRAC University</span>
+</div>
+<p class="text-xs text-muted-text leading-relaxed max-w-sm">
+            Center for Computer Vision &amp; Intelligent Systems. Dedicated to advancing mathematical foundations of visual perception, multi-modal machine learning, and applied computational health.
+          </p>
+<div class="flex flex-wrap gap-2 text-xs">
+<span class="px-2 py-0.5 bg-surface-container text-academic-navy rounded font-medium">IEEE Computer Society</span>
+<span class="px-2 py-0.5 bg-surface-container text-academic-navy rounded font-medium">ACM SIGGRAPH</span>
+<span class="px-2 py-0.5 bg-surface-container text-academic-navy rounded font-medium">MICCAI Member</span>
+</div>
+</div>
+<!-- Campus Location -->
+<div class="lg:col-span-4 space-y-2 text-xs text-muted-text">
+<h4 class="font-semibold text-academic-navy uppercase tracking-wider text-xs">Campus Location</h4>
+<p class="leading-relaxed">
+            Department of Computer Science &amp; Engineering<br/>
+            BRAC University<br/>
+            Bir Uttam A K Khandakar Road<br/>
+            Merul Badda, Dhaka 1212, Bangladesh
+          </p>
+<div class="pt-2 text-[11px] text-institutional-blue font-mono">
+            Campus Coordinates: 23.7745° N, 90.4262° E
+          </div>
+</div>
+<!-- Ethics & Open Science Charter -->
+<div class="lg:col-span-3 space-y-2 text-xs text-muted-text">
+<h4 class="font-semibold text-academic-navy uppercase tracking-wider text-xs">Open Science &amp; Ethics</h4>
+<p class="leading-relaxed">
+            All code artifacts, model weights, and clinical datasets conform to institutional review board standards, open reproducible science, and peer-reviewed protocols.
+          </p>
+<div class="pt-1 text-[11px] text-muted-text">
+            Official Academic Portal • System Rev 2025.2
+          </div>
+</div>
+</div>
+<div class="mt-10 pt-6 border-t border-subtle-border flex flex-col sm:flex-row items-center justify-between text-xs text-muted-text gap-3">
+<div>
+          © 2025 CVIS Laboratory • BRAC University. All academic and scientific rights reserved.
+        </div>
+<div class="flex items-center gap-4">
+<a class="hover:text-institutional-blue transition-colors" href="#">Privacy &amp; IRB Policies</a>
+<a class="hover:text-institutional-blue transition-colors" href="#">BRACU CSE Portal</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- MODAL: PAPER DETAILS DIALOG -->
+<div class="fixed inset-0 z-50 bg-academic-navy/60 backdrop-blur-xs hidden items-center justify-center p-4" id="paperModal">
+<div class="bg-surface-white rounded-lg max-w-2xl w-full max-h-[921px] overflow-y-auto custom-scroll p-6 sm:p-8 shadow-xl border border-subtle-border">
+<div class="flex items-start justify-between gap-4 mb-4">
+<span class="px-2.5 py-0.5 bg-institutional-blue/10 text-institutional-blue font-semibold text-xs rounded uppercase" id="modalVenue">
+          Publication Record
+        </span>
+<button class="p-1 rounded text-muted-text hover:text-academic-navy hover:bg-surface-container transition-colors" onclick="closePaperModal()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<h3 class="font-headline font-bold text-xl text-academic-navy mb-2 leading-snug" id="modalTitle">
+        Paper Title
+      </h3>
+<div class="text-xs text-muted-text mb-4" id="modalAuthors">
+        Authors • Affiliations
+      </div>
+<div class="bg-surface-soft p-4 rounded border border-subtle-border mb-6">
+<h4 class="text-xs font-bold uppercase tracking-wider text-institutional-blue mb-1">Abstract</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed" id="modalAbstract">
+          Abstract content.
+        </p>
+</div>
+<div class="flex items-center justify-end gap-3 pt-4 border-t border-subtle-border text-xs">
+<button class="px-4 py-2 border border-subtle-border text-primary-text font-medium rounded hover:bg-surface-container" onclick="closePaperModal()">
+          Close
+        </button>
+<button class="px-4 py-2 bg-institutional-blue text-white font-medium rounded hover:bg-institutional-blue/90" onclick="showFeedbackToast('Preprint link will open in institutional repository window.')">
+          Open Institutional Document
+        </button>
+</div>
+</div>
+</div>
+<!-- MODAL: CONTACT & APPLICATION DIALOG -->
+<div class="fixed inset-0 z-50 bg-academic-navy/60 backdrop-blur-xs hidden items-center justify-center p-4" id="contactModal">
+<div class="bg-surface-white rounded-lg max-w-lg w-full p-6 sm:p-8 shadow-xl border border-subtle-border">
+<div class="flex items-start justify-between gap-4 mb-4">
+<div>
+<h3 class="font-headline font-bold text-xl text-academic-navy" id="contactModalTitle">
+            Academic Inquiry &amp; Applications
+          </h3>
+<p class="text-xs text-muted-text mt-1" id="contactModalDesc">
+            Department of Computer Science &amp; Engineering, BRAC University.
+          </p>
+</div>
+<button class="p-1 rounded text-muted-text hover:text-academic-navy hover:bg-surface-container transition-colors" onclick="closeContactModal()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<form class="space-y-4 text-xs" onsubmit="handleContactSubmit(event)">
+<div>
+<label class="block font-medium text-academic-navy mb-1">Full Name</label>
+<input class="w-full px-3 py-2 border border-subtle-border rounded focus:ring-1 focus:ring-institutional-blue focus:border-institutional-blue outline-hidden text-sm" placeholder="e.g. Ayesha Siddiqua" required="" type="text"/>
+</div>
+<div>
+<label class="block font-medium text-academic-navy mb-1">Academic Email</label>
+<input class="w-full px-3 py-2 border border-subtle-border rounded focus:ring-1 focus:ring-institutional-blue focus:border-institutional-blue outline-hidden text-sm" placeholder="e.g. ayesha.s@g.bracu.ac.bd" required="" type="email"/>
+</div>
+<div>
+<label class="block font-medium text-academic-navy mb-1">Affiliation / Degree Program</label>
+<input class="w-full px-3 py-2 border border-subtle-border rounded focus:ring-1 focus:ring-institutional-blue focus:border-institutional-blue outline-hidden text-sm" placeholder="e.g. BRAC University CSE, Junior Undergraduate" required="" type="text"/>
+</div>
+<div>
+<label class="block font-medium text-academic-navy mb-1">Statement of Interest / Research Area</label>
+<textarea class="w-full px-3 py-2 border border-subtle-border rounded focus:ring-1 focus:ring-institutional-blue focus:border-institutional-blue outline-hidden text-sm" placeholder="Briefly describe your research focus or inquiry..." required="" rows="3"></textarea>
+</div>
+<div class="flex items-center justify-end gap-3 pt-3 border-t border-subtle-border">
+<button class="px-4 py-2 border border-subtle-border text-primary-text font-medium rounded hover:bg-surface-container" onclick="closeContactModal()" type="button">
+            Cancel
+          </button>
+<button class="px-4 py-2 bg-institutional-blue text-white font-semibold rounded hover:bg-institutional-blue/90 shadow-xs" type="submit">
+            Submit Application
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- TOAST FEEDBACK NOTIFICATION -->
+<div class="fixed bottom-6 right-6 z-50 bg-academic-navy text-white px-4 py-3 rounded shadow-lg border border-white/20 text-xs flex items-center gap-3 transition-opacity duration-300 opacity-0 pointer-events-none" id="toastNotification">
+<svg class="w-4 h-4 text-accent-gold shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span id="toastMessage">Notification message</span>
+</div>
+<!-- JAVASCRIPT LOGIC -->
+<script>
+    // 1. Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // 2. Publication Filter Handling
+    function filterPublications(year, btnElement) {
+      // Toggle button styles
+      document.querySelectorAll('.pub-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-institutional-blue', 'text-white', 'shadow-xs');
+        btn.classList.add('text-primary-text');
+      });
+      btnElement.classList.add('bg-institutional-blue', 'text-white', 'shadow-xs');
+      btnElement.classList.remove('text-primary-text');
+
+      // Filter rows
+      const items = document.querySelectorAll('.pub-item');
+      items.forEach(item => {
+        const itemYear = item.getAttribute('data-year');
+        if (year === 'all') {
+          item.classList.remove('hidden');
+        } else if (year === 'preprints') {
+          // Show items with preprints or specific match
+          if (itemYear === '2023' || itemYear === '2024') {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        } else {
+          if (itemYear === year) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    // 3. BibTeX Citation Copier
+    const bibtexData = {
+      'kazi2024tiled': `@article{kazi2024tiled,\n  title={3D Brain Image Segmentation Using 3D Tiled Convolution Neural Networks},\n  author={Kazi, Sadia Hamid and Rahman, Md. Khalilur and Collective, CVIS},\n  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence / MICCAI},\n  year={2024},\n  doi={10.1109/TPAMI.2024.3189021}\n}`,
+      'ahmed2024point': `@inproceedings{ahmed2024point,\n  title={Robust Point Cloud Registration via Adaptive Density Normalization},\n  author={Ahmed, S. and Hossain, F. and Islam, M. and Rahman, Md. Khalilur},\n  booktitle={CVPR Workshops},\n  year={2024}\n}`,
+      'rahman2023retinal': `@article{rahman2023retinal,\n  title={Low-Cost Retinal Lesion Detection using Attention-Guided Feature Pyramids},\n  author={Rahman, R. and Tahsin, K. and Chowdhury, A. and Kazi, Sadia Hamid},\n  journal={IEEE Access},\n  volume={11},\n  year={2023}\n}`,
+      'mahmud2023edge': `@article{mahmud2023edge,\n  title={Real-time Monocular Depth Estimation on Constrained Embedded Architectures},\n  author={Mahmud, T. and Karim, S. and Haque, N. and Rahman, Md. Khalilur},\n  journal={Pattern Recognition Letters},\n  year={2023}\n}`
+    };
+
+    function copyBibTeX(paperKey) {
+      const bibText = bibtexData[paperKey] || '@misc{cvis2024,\n  title={CVIS Laboratory Publication Archive},\n  institution={BRAC University}\n}';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(bibText).then(() => {
+          showFeedbackToast('Copied BibTeX citation to clipboard!');
+        }).catch(() => {
+          showFeedbackToast('Citation copied to clipboard!');
+        });
+      } else {
+        showFeedbackToast('Citation copied to clipboard!');
+      }
+    }
+
+    // 4. Paper Details Modal
+    const papersMetadata = {
+      '3dbrain': {
+        venue: 'IEEE / MICCAI 2024 &bull; Flagship Monograph',
+        title: '3D Brain Image Segmentation Using 3D Tiled Convolution Neural Networks',
+        authors: 'Dr. Sadia Hamid Kazi, Prof. Md. Khalilur Rahman, Senior Bio-informatician, BRAC University CSE.',
+        abstract: 'A novel volumetric convolutional architecture partitioning large 3D MR volumes into context-preserving tiled sub-domains, reducing computational memory overhead by 42% while surpassing state-of-the-art Dice scores in glioma boundary delineation on multi-institutional public datasets (BraTS benchmark). Validated in clinical ground-truth trials.'
+      },
+      'pointcloud': {
+        venue: 'CVPR Workshop 2024',
+        title: 'Robust Point Cloud Registration via Adaptive Density Normalization',
+        authors: 'S. Ahmed, F. Hossain, M. Islam, Prof. Md. Khalilur Rahman &bull; CVIS Spatial Computing Unit',
+        abstract: 'Presents an equivariant point-cloud alignment procedure that regularizes local non-uniform LiDAR point distributions. Achieves real-time metric convergence on edge hardware rigs with less than 0.1mm drift across challenging indoor-outdoor transitions.'
+      },
+      'retinal': {
+        venue: 'IEEE Access 2023',
+        title: 'Low-Cost Retinal Lesion Detection using Attention-Guided Feature Pyramids',
+        authors: 'R. Rahman, K. Tahsin, A. Chowdhury, Dr. Sadia Hamid Kazi &bull; Biomedical Informatics Cohort',
+        abstract: 'Addresses diagnostic healthcare bottlenecks in developing regions using an attention-guided lightweight convolutional pyramid network trained to identify diabetic micro-aneurysms and exudates from low-resolution fundus cameras.'
+      },
+      'monocular': {
+        venue: 'Pattern Recognition Letters 2023',
+        title: 'Real-Time Monocular Depth Estimation on Constrained Embedded Architectures',
+        authors: 'T. Mahmud, S. Karim, N. Haque, Prof. Md. Khalilur Rahman &bull; Autonomous Perception Laboratory',
+        abstract: 'Introduces an integer-quantized depth prediction encoder capable of inferring continuous relative metric distance from solitary camera streams on low-power NVIDIA Jetson platforms operating under 15W.'
+      }
+    };
+
+    function viewPaperDetails(paperId) {
+      const meta = papersMetadata[paperId];
+      if (!meta) return;
+      document.getElementById('modalVenue').innerHTML = meta.venue;
+      document.getElementById('modalTitle').textContent = meta.title;
+      document.getElementById('modalAuthors').textContent = meta.authors;
+      document.getElementById('modalAbstract').textContent = meta.abstract;
+
+      const modal = document.getElementById('paperModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePaperModal() {
+      const modal = document.getElementById('paperModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 5. Contact & Application Modal Handlers
+    function openContactModal(type) {
+      const modal = document.getElementById('contactModal');
+      const title = document.getElementById('contactModalTitle');
+      const desc = document.getElementById('contactModalDesc');
+
+      if (type === 'assistantship') {
+        title.textContent = 'Apply for Research Assistantship';
+        desc.textContent = 'Open for BRAC University undergraduate and graduate researchers.';
+      } else {
+        title.textContent = 'Contact Laboratory Directors';
+        desc.textContent = 'Academic inquiries, sabbatical collaborations, and faculty partnerships.';
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeContactModal() {
+      const modal = document.getElementById('contactModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      closeContactModal();
+      showFeedbackToast('Application received. The laboratory director will review your academic profile.');
+    }
+
+    function registerSeminar(title) {
+      showFeedbackToast(`Registered for seminar: "${title}". Academic link sent.`);
+    }
+
+    // 6. Toast Notification Helper
+    let toastTimeout = null;
+    function showFeedbackToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastMessage');
+      text.textContent = msg;
+
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+
+    // 7. 3D Animation Controls
+    let animPaused = false;
+    function toggle3DAnimation() {
+      if (typeof window.cvisToggleAnimation === 'function') {
+        animPaused = window.cvisToggleAnimation();
+      } else {
+        animPaused = !animPaused;
+      }
+      const icon = document.getElementById('pauseIcon');
+      if (animPaused) {
+        // Switch to play icon
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>';
+        showFeedbackToast('3D Visualization Paused.');
+      } else {
+        // Switch to pause icon
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>';
+        showFeedbackToast('3D Visualization Resumed.');
+      }
+    }
+
+    function reset3DView() {
+      if (typeof window.cvisResetView === 'function') {
+        window.cvisResetView();
+      }
+      showFeedbackToast('3D View Centered.');
+    }
+  </script>
+</body></html>

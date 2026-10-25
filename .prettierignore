@@ -1,0 +1,13 @@
+node_modules
+.next
+.cache
+design
+reference
+docs
+AGENTS.md
+README_START.md
+START_HERE_EASY_GUIDE.md
+pnpm-lock.yaml
+next-env.d.ts
+playwright-report
+test-results

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_207 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_207" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_207');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // CVIS Anatomical 3D Brain Model (Continuous Rotation & Drag Controls)
+const width = container.clientWidth || 360;
+const height = container.clientHeight || 280;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+camera.position.set(0, 0, 52);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+renderer.setClearColor(0x000000, 0);
+container.appendChild(renderer.domElement);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+scene.add(ambientLight);
+
+const dirLight1 = new THREE.DirectionalLight(0xd9e8f8, 0.85);
+dirLight1.position.set(20, 30, 40);
+scene.add(dirLight1);
+
+const dirLight2 = new THREE.DirectionalLight(0xf2c94c, 0.45);
+dirLight2.position.set(-20, -10, -20);
+scene.add(dirLight2);
+
+const brainGroup = new THREE.Group();
+scene.add(brainGroup);
+
+function createHemisphere(isLeft) {
+  const geo = new THREE.SphereGeometry(11, 48, 48);
+  const pos = geo.attributes.position;
+  const sign = isLeft ? -1 : 1;
+
+  for (let i = 0; i < pos.count; i++) {
+    let x = pos.getX(i);
+    let y = pos.getY(i);
+    let z = pos.getZ(i);
+
+    x = x * 0.78 + (sign * 4.8);
+    y = y * 0.88;
+    z = z * 1.25;
+
+    if ((isLeft && x > -0.4) || (!isLeft && x < 0.4)) {
+      x *= 0.55;
+    }
+
+    const u = Math.atan2(z, x);
+    const v = Math.acos(y / 12);
+    const wrinkle = Math.sin(u * 14) * Math.cos(v * 16) * 0.75 + Math.sin(z * 0.8) * Math.cos(x * 0.8) * 0.45;
+    const temporalLobeBump = (y < -1 && z > 0) ? Math.sin(z * 0.4) * 1.2 : 0;
+
+    pos.setXYZ(i, x + (wrinkle * 0.5), y + temporalLobeBump + (wrinkle * 0.4), z + (wrinkle * 0.6));
+  }
+  geo.computeVertexNormals();
+
+  const mat = new THREE.MeshStandardMaterial({
+    color: 0xedf3f9,
+    roughness: 0.38,
+    metalness: 0.12
+  });
+  return new THREE.Mesh(geo, mat);
+}
+
+const leftHemisphere = createHemisphere(true);
+const rightHemisphere = createHemisphere(false);
+brainGroup.add(leftHemisphere);
+brainGroup.add(rightHemisphere);
+
+const cerebGeo = new THREE.SphereGeometry(5.2, 32, 32);
+const cPos = cerebGeo.attributes.position;
+for (let i = 0; i < cPos.count; i++) {
+  let x = cPos.getX(i) * 1.35;
+  let y = cPos.getY(i) * 0.65 - 7.5;
+  let z = cPos.getZ(i) * 0.9 - 6.5;
+  const folia = Math.sin(y * 12) * 0.3;
+  cPos.setXYZ(i, x, y + folia, z);
+}
+cerebGeo.computeVertexNormals();
+const cerebMat = new THREE.MeshStandardMaterial({
+  color: 0xd9e5f3,
+  roughness: 0.45,
+  metalness: 0.08
+});
+const cerebellum = new THREE.Mesh(cerebGeo, cerebMat);
+brainGroup.add(cerebellum);
+
+const stemGeo = new THREE.CylinderGeometry(2.1, 1.6, 9, 24);
+const stemMat = new THREE.MeshStandardMaterial({
+  color: 0xe2ebf5,
+  roughness: 0.4,
+  metalness: 0.05
+});
+const brainstem = new THREE.Mesh(stemGeo, stemMat);
+brainstem.position.set(0, -9.8, -2.5);
+brainstem.rotation.x = -0.18;
+brainGroup.add(brainstem);
+
+const roiGeo = new THREE.IcosahedronGeometry(3.6, 2);
+const roiMat = new THREE.MeshStandardMaterial({
+  color: 0xF2C94C,
+  emissive: 0x7a6112,
+  transparent: true,
+  opacity: 0.85,
+  roughness: 0.25,
+  wireframe: true
+});
+const roiMesh = new THREE.Mesh(roiGeo, roiMat);
+roiMesh.position.set(4.8, 2.2, 2.5);
+brainGroup.add(roiMesh);
+
+let isDragging = false;
+let previousMouseX = 0;
+let previousMouseY = 0;
+let isPaused = false;
+
+container.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  previousMouseX = e.clientX;
+  previousMouseY = e.clientY;
+});
+window.addEventListener('mouseup', () => { isDragging = false; });
+window.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  const deltaX = e.clientX - previousMouseX;
+  const deltaY = e.clientY - previousMouseY;
+  brainGroup.rotation.y += deltaX * 0.012;
+  brainGroup.rotation.x += deltaY * 0.012;
+  previousMouseX = e.clientX;
+  previousMouseY = e.clientY;
+});
+
+container.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    isDragging = true;
+    previousMouseX = e.touches[0].clientX;
+    previousMouseY = e.touches[0].clientY;
+  }
+}, { passive: true });
+window.addEventListener('touchend', () => { isDragging = false; });
+window.addEventListener('touchmove', (e) => {
+  if (!isDragging || e.touches.length !== 1) return;
+  const deltaX = e.touches[0].clientX - previousMouseX;
+  const deltaY = e.touches[0].clientY - previousMouseY;
+  brainGroup.rotation.y += deltaX * 0.012;
+  brainGroup.rotation.x += deltaY * 0.012;
+  previousMouseX = e.touches[0].clientX;
+  previousMouseY = e.touches[0].clientY;
+}, { passive: true });
+
+window.cvisToggleBrainRotation = function() {
+  isPaused = !isPaused;
+  return isPaused;
+};
+
+window.cvisResetBrainOrientation = function() {
+  brainGroup.rotation.set(0.1, 0, 0);
+};
+
+brainGroup.rotation.set(0.1, 0, 0);
+
+let clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  if (!isPaused && !isDragging) {
+    const delta = clock.getDelta();
+    brainGroup.rotation.y += delta * 0.45;
+  }
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  const w = container.clientWidth || 360;
+  const h = container.clientHeight || 280;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_207 -->
+</body>
+</html>

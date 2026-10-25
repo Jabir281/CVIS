@@ -1,0 +1,18 @@
+{
+  "identity": "CVIS / BRAC University",
+  "labName": "Computer Vision and Intelligent Systems Research Lab",
+  "publication": {
+    "title": "3D brain image segmentation using 3D tiled convolution neural networks",
+    "source": "https://cvis.bracu.ac.bd/3d-brain-image-segmentation-using-3d-tiled-convolution-neural-networks/",
+    "summary": "The legacy article describes a method for dividing a three-dimensional brain scan into regions using tiled convolution. This short description is a design sample based on that article, not a verified account of current lab work.",
+    "topics": "3D vision / Medical image analysis",
+    "status": "Legacy title; bibliography awaiting verification"
+  },
+  "research": [
+    {"number": "01", "name": "Computer vision", "question": "How does an image become an understanding?", "description": "Explore the relationship between visual signals, representations and interpretation."},
+    {"number": "02", "name": "Medical image analysis", "question": "What can we learn by looking more closely?", "description": "Discover research concerned with making structure in complex images easier to interpret."},
+    {"number": "03", "name": "3D vision & extended reality", "question": "What lies beyond a single viewpoint?", "description": "Consider depth, reconstruction and the relationship between physical and digital space."}
+  ],
+  "researchSource": "https://cvis.bracu.ac.bd/",
+  "editorialNote": "Research questions and headlines are proposed editorial copy. They are not claims of specific results."
+}

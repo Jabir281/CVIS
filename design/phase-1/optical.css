@@ -1,0 +1,25 @@
+body { --paper: #f5f6f2; --ink: #172521; --muted: #52615a; --accent: #253494; --on-accent: #ffffff; --line: #81908a; --surface: #e8ede6; --focus: #253494; }
+.hero { padding: 55px 4% 65px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 44px; align-items: center; }
+.hero h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.065em; }
+.hero h1 em { color: var(--accent); font-weight: normal; }
+.hero .eyebrow { margin-bottom: 28px; }
+.hero figure { border-left: 1px solid var(--line); padding-left: 30px; }
+.figure-heading { display: flex; justify-content: space-between; gap: 20px; font: 13px "Courier New", monospace; }
+.art-window { background: #e8ede6; }
+.focus-plane { inset: 18% 30% 18% 26%; border: 2px solid #253494; transform: skewY(-12deg); transition: transform 180ms ease, inset 180ms ease; }
+#near:checked ~ .art-window .focus-plane { inset-inline: 12% 44%; }
+#far:checked ~ .art-window .focus-plane { inset-inline: 44% 12%; }
+.research-entry h3 { font-family: Georgia, "Times New Roman", serif; font-size: 31px; }
+.research-entry { grid-template-columns: 60px 1.15fr 1fr; }
+.paper-row h3 { font-family: Georgia, "Times New Roman", serif; font-size: 33px; }
+.publication-hero h1 { font-family: Georgia, "Times New Roman", serif; }
+.publication-hero { border-bottom: 10px solid var(--accent); }
+.join-panel h2 { font-family: Georgia, "Times New Roman", serif; }
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1fr; gap: 35px; padding-top: 36px; }
+  .hero h1 { font-size: clamp(50px, 11vw, 85px); max-width: 10ch; margin-bottom: 24px; }
+  .hero figure { border-left: 0; padding-left: 0; }
+  .hero .lead { max-width: 32ch; }
+  .research-entry { grid-template-columns: 35px 1fr; }
+  .paper-row h3 { font-size: 28px; }
+}

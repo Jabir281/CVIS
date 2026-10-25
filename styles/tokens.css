@@ -1,0 +1,61 @@
+/* Approved concept colors; not an official university brand specification.
+   See docs/decisions/001-approved-stitch-implementation.md. */
+:root {
+  --color-blue: #123f78;
+  --color-navy: #172b4d;
+  --color-blue-secondary: #2864a5;
+  --color-yellow: #f2c94c;
+  --color-white: #ffffff;
+  --color-background: #f5f8fc;
+  --color-border: #d9e3ee;
+  --color-text: #243449;
+  --color-muted: #526174;
+  --color-pale-blue: #a6c8e8;
+  --color-brain: #edf3f9;
+  --color-brain-secondary: #d9e5f3;
+  --color-brain-stem: #e2ebf5;
+
+  --color-action: var(--color-blue);
+  --color-action-hover: var(--color-navy);
+  --color-action-pressed: var(--color-navy);
+  --color-on-action: var(--color-white);
+  --color-highlight: var(--color-yellow);
+  --color-on-highlight: var(--color-navy);
+  --color-focus: var(--color-blue);
+  --color-focus-on-dark: var(--color-yellow);
+  --color-control-border: var(--color-blue-secondary);
+  --shadow-card: 0 8px 28px color-mix(in srgb, var(--color-navy) 8%, transparent);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --radius-button: 0.5625rem;
+  --radius-card: 0.875rem;
+  --focus-width: 3px;
+  --focus-offset: 3px;
+  --control-min-size: 2.75rem;
+  --content-max-width: 80rem;
+  --reading-max-width: 68ch;
+  --page-gutter: clamp(1rem, 4vw, 3rem);
+
+  /* Native fonts are provisional until the actual design source is available. */
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-display: var(--font-body);
+  --line-height-body: 1.65;
+  --line-height-heading: 1.12;
+  --duration-interaction: 200ms;
+  --easing-interaction: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-interaction: 0ms;
+  }
+}

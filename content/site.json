@@ -1,0 +1,37 @@
+{
+  "name": "CVIS Laboratory",
+  "fullName": "Computer Vision and Intelligent Systems Research Lab",
+  "institution": "BRAC University",
+  "previewNotice": "Development preview · Content and institutional identity pending CVIS review",
+  "hero": {
+    "title": "Advancing Spatial Intelligence & Computational Vision",
+    "summary": "Exploring how intelligent systems perceive, interpret and interact with the visual world. Discover computer vision, image analysis and the science of visual intelligence.",
+    "status": "draft"
+  },
+  "navigation": [
+    { "label": "About", "href": "/#goal" },
+    { "label": "Research Areas", "href": "/#research" },
+    { "label": "Publications", "href": "/#publications" },
+    { "label": "People", "href": "/#people" },
+    { "label": "Facilities", "href": "/#facilities" },
+    { "label": "Seminars", "href": "/#seminars" }
+  ],
+  "research": [
+    { "id": "computer-vision", "title": "Computer Vision & Image Processing", "summary": "How can images be transformed into useful representations of the visual world?", "tags": ["Visual perception", "Image analysis"], "status": "draft" },
+    { "id": "machine-learning", "title": "Artificial Intelligence & Machine Learning", "summary": "How can systems learn useful patterns from data and generalize to unfamiliar situations?", "tags": ["Learning", "Representation"], "status": "draft" },
+    { "id": "medical-image-analysis", "title": "Medical Image Analysis", "summary": "How can computational methods help researchers study structures within medical images?", "tags": ["Segmentation", "Volumetric images"], "status": "draft" },
+    { "id": "3d-vision", "title": "3D Vision & Spatial Computing", "summary": "How can images and spatial measurements describe the shape and depth of a scene?", "tags": ["Point clouds", "Reconstruction"], "status": "draft" },
+    { "id": "data-science", "title": "Data Science & Analytics", "summary": "How can careful analysis make complex datasets more interpretable and useful?", "tags": ["Analysis", "Interpretation"], "status": "draft" },
+    { "id": "xr", "title": "Virtual, Augmented & Mixed Reality", "summary": "How can interactive visual environments connect digital representations and physical spaces?", "tags": ["Interaction", "Spatial interfaces"], "status": "draft" }
+  ],
+  "publication": {
+    "title": "3D Brain Image Segmentation Using 3D Tiled Convolution Neural Networks",
+    "sourceUrl": "https://cvis.bracu.ac.bd/3d-brain-image-segmentation-using-3d-tiled-convolution-neural-networks/",
+    "status": "draft",
+    "notice": "Legacy article title retained for migration review. Authors, venue, year, DOI and results have not been verified; citation and download actions are withheld."
+  },
+  "groups": ["Faculty & directors", "Researchers & students", "Alumni"],
+  "facilities": ["Research spaces", "Computing resources", "Imaging & experimental equipment", "Collaborative workspaces"],
+  "legacyContact": "https://cvis.bracu.ac.bd/contact/",
+  "legacyJoin": "https://cvis.bracu.ac.bd/join-us/"
+}

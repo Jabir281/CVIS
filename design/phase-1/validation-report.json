@@ -1,0 +1,272 @@
+{
+  "status": "PASS",
+  "scope": "Static source/link/contrast checks only; browser rendering and interaction not tested",
+  "pages": 7,
+  "contrast": [
+    {
+      "direction": "optical",
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 14.62,
+      "minimum": 4.5
+    },
+    {
+      "direction": "optical",
+      "foreground": "muted",
+      "background": "paper",
+      "ratio": 6.02,
+      "minimum": 4.5
+    },
+    {
+      "direction": "optical",
+      "foreground": "muted",
+      "background": "surface",
+      "ratio": 5.5,
+      "minimum": 4.5
+    },
+    {
+      "direction": "optical",
+      "foreground": "on-accent",
+      "background": "accent",
+      "ratio": 10.51,
+      "minimum": 4.5
+    },
+    {
+      "direction": "optical",
+      "foreground": "accent",
+      "background": "paper",
+      "ratio": 9.69,
+      "minimum": 4.5
+    },
+    {
+      "direction": "optical",
+      "foreground": "focus",
+      "background": "paper",
+      "ratio": 9.69,
+      "minimum": 3
+    },
+    {
+      "direction": "optical",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 8.85,
+      "minimum": 3
+    },
+    {
+      "direction": "optical",
+      "foreground": "line",
+      "background": "paper",
+      "ratio": 3.08,
+      "minimum": 3
+    },
+    {
+      "direction": "observatory",
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 15.56,
+      "minimum": 4.5
+    },
+    {
+      "direction": "observatory",
+      "foreground": "muted",
+      "background": "paper",
+      "ratio": 8.65,
+      "minimum": 4.5
+    },
+    {
+      "direction": "observatory",
+      "foreground": "muted",
+      "background": "surface",
+      "ratio": 7.2,
+      "minimum": 4.5
+    },
+    {
+      "direction": "observatory",
+      "foreground": "on-accent",
+      "background": "accent",
+      "ratio": 11.34,
+      "minimum": 4.5
+    },
+    {
+      "direction": "observatory",
+      "foreground": "accent",
+      "background": "paper",
+      "ratio": 11.34,
+      "minimum": 4.5
+    },
+    {
+      "direction": "observatory",
+      "foreground": "focus",
+      "background": "paper",
+      "ratio": 11.15,
+      "minimum": 3
+    },
+    {
+      "direction": "observatory",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 9.28,
+      "minimum": 3
+    },
+    {
+      "direction": "observatory",
+      "foreground": "line",
+      "background": "paper",
+      "ratio": 4.05,
+      "minimum": 3
+    },
+    {
+      "direction": "museum",
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 12.49,
+      "minimum": 4.5
+    },
+    {
+      "direction": "museum",
+      "foreground": "muted",
+      "background": "paper",
+      "ratio": 6.0,
+      "minimum": 4.5
+    },
+    {
+      "direction": "museum",
+      "foreground": "muted",
+      "background": "surface",
+      "ratio": 5.17,
+      "minimum": 4.5
+    },
+    {
+      "direction": "museum",
+      "foreground": "on-accent",
+      "background": "accent",
+      "ratio": 7.67,
+      "minimum": 4.5
+    },
+    {
+      "direction": "museum",
+      "foreground": "accent",
+      "background": "paper",
+      "ratio": 6.77,
+      "minimum": 4.5
+    },
+    {
+      "direction": "museum",
+      "foreground": "focus",
+      "background": "paper",
+      "ratio": 9.27,
+      "minimum": 3
+    },
+    {
+      "direction": "museum",
+      "foreground": "focus",
+      "background": "surface",
+      "ratio": 7.98,
+      "minimum": 3
+    },
+    {
+      "direction": "museum",
+      "foreground": "line",
+      "background": "paper",
+      "ratio": 3.18,
+      "minimum": 3
+    }
+  ],
+  "file_sizes": [
+    {
+      "file": "depth.svg",
+      "bytes": 113460,
+      "gzip_bytes": 11207
+    },
+    {
+      "file": "gallery.css",
+      "bytes": 1640,
+      "gzip_bytes": 751
+    },
+    {
+      "file": "gallery.js",
+      "bytes": 797,
+      "gzip_bytes": 413
+    },
+    {
+      "file": "index.html",
+      "bytes": 3815,
+      "gzip_bytes": 1404
+    },
+    {
+      "file": "interactions.js",
+      "bytes": 1326,
+      "gzip_bytes": 588
+    },
+    {
+      "file": "museum-publication.html",
+      "bytes": 3867,
+      "gzip_bytes": 1627
+    },
+    {
+      "file": "museum.css",
+      "bytes": 3223,
+      "gzip_bytes": 1172
+    },
+    {
+      "file": "museum.html",
+      "bytes": 7670,
+      "gzip_bytes": 3000
+    },
+    {
+      "file": "observatory-publication.html",
+      "bytes": 3923,
+      "gzip_bytes": 1630
+    },
+    {
+      "file": "observatory.css",
+      "bytes": 2969,
+      "gzip_bytes": 1015
+    },
+    {
+      "file": "observatory.html",
+      "bytes": 7732,
+      "gzip_bytes": 3010
+    },
+    {
+      "file": "optical-publication.html",
+      "bytes": 3870,
+      "gzip_bytes": 1625
+    },
+    {
+      "file": "optical.css",
+      "bytes": 1765,
+      "gzip_bytes": 740
+    },
+    {
+      "file": "optical.html",
+      "bytes": 7511,
+      "gzip_bytes": 2924
+    },
+    {
+      "file": "optical.svg",
+      "bytes": 3068,
+      "gzip_bytes": 596
+    },
+    {
+      "file": "projection.svg",
+      "bytes": 45100,
+      "gzip_bytes": 3820
+    },
+    {
+      "file": "sampled.svg",
+      "bytes": 14303,
+      "gzip_bytes": 1114
+    },
+    {
+      "file": "shared.css",
+      "bytes": 7815,
+      "gzip_bytes": 2279
+    },
+    {
+      "file": "specimen.svg",
+      "bytes": 2856,
+      "gzip_bytes": 536
+    }
+  ]
+}

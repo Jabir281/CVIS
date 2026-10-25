@@ -1,0 +1,40 @@
+{
+  "name": "bracu-cvis-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.15.0",
+  "engines": { "node": ">=22.23.4 <23 || >=24.22.1 <25" },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "node scripts/validate-content.mjs && next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "validate:content": "node scripts/validate-content.mjs",
+    "check:design": "node scripts/check-design-inputs.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "audit:dependencies": "pnpm audit --audit-level=high"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.19.21",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.185.4",
+    "eslint": "10.13.0",
+    "eslint-config-next": "16.4.3",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3"
+  }
+}

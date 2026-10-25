@@ -1,0 +1,15 @@
+{
+  "id": "cvis-goal",
+  "status": "draft",
+  "approvalStatus": "NEEDS_APPROVAL",
+  "source": "Project owner's final implementation directive",
+  "reviewNotice": "Proposed editorial copy pending CVIS review. This is not an officially approved laboratory mission.",
+  "eyebrow": "What Is Our Goal?",
+  "title": "Advancing the Science of Visual Intelligence",
+  "paragraphs": [
+    "Our goal is to advance how intelligent systems perceive, interpret and interact with the visual world.",
+    "Through scientific research, experimentation and interdisciplinary collaboration, we aim to develop responsible computer vision technologies that support discovery and address meaningful real-world challenges.",
+    "We seek to create an environment where students, researchers and collaborators can explore new ideas, strengthen their technical understanding and contribute to the advancement of intelligent systems."
+  ],
+  "stages": ["Observe", "Understand", "Apply"]
+}
