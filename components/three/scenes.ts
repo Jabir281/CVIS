@@ -12,9 +12,9 @@ export type Model = {
 export function createModel(kind: SceneKind, palette: Palette): Model {
   if (kind === 'brain') return brainModel(palette);
   const root = new THREE.Group();
-  const positions = pointPositions(kind);
+  const positions: Float32Array = pointPositions(kind);
   const originals = positions.slice();
-  let targets = positions.slice();
+  let targets: Float32Array = new Float32Array(positions);
   const colors = new Float32Array(positions.length);
   const random = randomSequence(7);
   const blue = new THREE.Color(palette.blue);
