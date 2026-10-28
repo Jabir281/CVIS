@@ -17,7 +17,7 @@ export function mountScene(host: HTMLElement, kind: SceneKind, onState: (state: 
   const css = getComputedStyle(host);
   const color = (name: string) => {
     const value = css.getPropertyValue(`--color-${name}`).trim();
-    if (!/^#[\da-f]{6}$/i.test(value)) throw new Error('Missing scene color token');
+    if (!/^#(?:[\da-f]{3}|[\da-f]{6})$/i.test(value)) throw new Error('Missing scene color token');
     return value;
   };
   const palette: Palette = { blue: color('blue'), secondary: color('blue-secondary'), pale: color('pale-blue'), yellow: color('yellow'), white: color('white'), brain: color('brain'), cerebellum: color('brain-secondary'), stem: color('brain-stem') };
